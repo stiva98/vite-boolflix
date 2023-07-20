@@ -22,15 +22,25 @@ export default {
       //console.log (this.store.searchMovies);
 
       axios
-        .get('https://api.themoviedb.org/3/search/movie', {
-          params: {
-            api_key: '96a88563f87a075c5b061d8855e26795',
-            query: this.store.searchMovies
-          }
-        })
-        .then(res => {
-          this.store.movies = res.data.results;
-        })
+          .get('https://api.themoviedb.org/3/search/movie', {
+            params: {
+              api_key: '96a88563f87a075c5b061d8855e26795',
+              query: this.store.searchMovies
+            }
+          })
+          .then(res => {
+            this.store.movies = res.data.results;
+          })
+      axios
+          .get('https://api.themoviedb.org/3/search/tv', {
+            params: {
+              api_key: '96a88563f87a075c5b061d8855e26795',
+              query: this.store.searchMovies
+            }
+          })
+          .then(res => {
+            this.store.series = res.data.results;
+          })
     }
   },
 };
