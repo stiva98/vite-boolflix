@@ -15,7 +15,7 @@ export default {
 
 <template>
     <header>
-        <input type="text" placeholder="Cerca il tuo film o Serie TV" v-model="store.searchMovies">
+        <input type="text" placeholder="Cerca il tuo film o Serie TV" v-model="store.searchMovies" @keyup.enter="$emit('emitSearch')">
     <button @click="$emit('emitSearch')">
       Cerca
     </button>
