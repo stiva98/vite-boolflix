@@ -19,8 +19,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-footer {
-    padding: 40px;
-    text-align: center;
-}
+
 </style>
