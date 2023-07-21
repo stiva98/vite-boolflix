@@ -48,7 +48,7 @@ export default {
 
 <template>
     <div>
-        <ol>
+        <ol class="list-unstyled">
             <li>
                 <img :src="srcImage(elementOfMoviesSeries.poster_path)" :alt="elementOfMoviesSeries.title">
             </li>
