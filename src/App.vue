@@ -1,7 +1,6 @@
 <script>
 import HeaderComponent from "./components/HeaderComponent.vue";
 import MainComponent from "./components/MainComponent.vue";
-import FooterComponent from "./components/FooterComponent.vue";
 import axios from "axios";
 import { store } from "./store"
 
@@ -10,7 +9,6 @@ export default {
   components: {
     HeaderComponent,
     MainComponent,
-    FooterComponent,
   },
   data() {
     return {
@@ -50,8 +48,6 @@ export default {
   <HeaderComponent @emitSearch="search()"/>
 
   <MainComponent />
-
-  <FooterComponent />
 </template>
 
 <style lang="scss">
