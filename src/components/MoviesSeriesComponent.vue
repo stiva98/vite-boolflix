@@ -47,22 +47,20 @@ export default {
 </script>
 
 <template>
-    <div>
-        <ol class="list-unstyled">
-            <li>
-                <img :src="srcImage(elementOfMoviesSeries.poster_path)" :alt="elementOfMoviesSeries.title">
-            </li>
-            <li>
+    <div class="position-relative mb-4 card">
+        <img :src="srcImage(elementOfMoviesSeries.poster_path)" :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100">
+        <ol class="list-unstyled position-absolute top-0 start-0 h-100">
+            <li class="text-white">
                 {{ elementOfMoviesSeries.title ?? elementOfMoviesSeries.name }}
             </li>
-            <li>
+            <li class="text-white">
                 {{ elementOfMoviesSeries.original_title ?? elementOfMoviesSeries.original_name }}
             </li>
-            <li>
+            <li class="text-white">
                 <img :src="flag" :alt="elementOfMoviesSeries.original_language.toUpperCase()" class="img-flag">
 
             </li>
-            <li>
+            <li class="text-white">
                 {{ numberEntire(elementOfMoviesSeries.vote_average) }}
                 <i class="fa-star text-warning" :class="i <= numberEntire(elementOfMoviesSeries.vote_average) ? 'fa-solid' : 'fa-regular'"  v-for="i in 5" :key="i"></i>
             </li>
@@ -74,5 +72,16 @@ export default {
 @use "../assets/scss/partials/variables.scss" as *;
 .img-flag {
     width: 30px;
+}
+ol {
+    opacity: 0;
+    visibility: hidden;
+}
+.card:hover ol{
+    opacity: 1;
+    visibility: visible;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    padding: 20px;
+    width: 100%;
 }
 </style>

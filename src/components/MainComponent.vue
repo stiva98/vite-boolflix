@@ -18,24 +18,26 @@ export default {
 </script>
 
 <template>
-    <main class="background">
-        <h2 class="text-white">
-            MOVIES
-        </h2>
-        <ul class="list-unstyled">
-            <li v-for="(movie, i) in store.movies" :key="i">
-                <MoviesSeriesComponent :elementOfMoviesSeries="movie"/>
-            </li>
-        </ul>
-
-        <h2 class="text-white">
-            SERIES
-        </h2>
-        <ul class="list-unstyled">
-            <li v-for="(serie, i) in store.series" :key="i">
-                <MoviesSeriesComponent :elementOfMoviesSeries="serie"/>
-            </li>
-        </ul>
+    <main>
+        <div class="container">
+            <h2 class="text-white">
+                MOVIES
+            </h2>
+            <div class="row">
+                <div class="col-3 d-flex flex-column" v-for="(movie, i) in store.movies" :key="i">
+                    <MoviesSeriesComponent :elementOfMoviesSeries="movie"/>
+                </div>
+            </div>
+    
+            <h2 class="text-white">
+                SERIES
+            </h2>
+            <div class="row">
+                <div class="col-3 d-flex flex-column" v-for="(serie, i) in store.series" :key="i">
+                    <MoviesSeriesComponent :elementOfMoviesSeries="serie"/>
+                </div>
+            </div>
+        </div>
     </main>
 </template>
 
@@ -46,7 +48,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    //height: 100vh;
+    min-height: 100vh;
 }
 
 </style>
