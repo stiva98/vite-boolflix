@@ -47,9 +47,9 @@ export default {
 </script>
 
 <template>
-    <div class="position-relative mb-4 card">
-        <img :src="srcImage(elementOfMoviesSeries.poster_path)" v-if="elementOfMoviesSeries.poster_path != null" :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100">
-        <img src="../assets/img/netflix-default.png" v-else :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100">
+    <div class="position-relative mb-4 card h-100">
+        <img :src="srcImage(elementOfMoviesSeries.poster_path)" v-if="elementOfMoviesSeries.poster_path != null" :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100 object-fit-cover">
+        <img src="../assets/img/netflix-default.png" v-else :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100 object-fit-cover">
         <ol class="list-unstyled position-absolute top-0 start-0 h-100">
             <li class="text-white">
                 {{ elementOfMoviesSeries.title ?? elementOfMoviesSeries.name }}
