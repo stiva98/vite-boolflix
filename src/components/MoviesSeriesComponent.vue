@@ -26,6 +26,8 @@ export default {
                 return 'https://flagicons.lipis.dev/flags/4x3/de.svg'
             }else if (this.elementOfMoviesSeries.original_language == 'pt') {
                 return 'https://flagicons.lipis.dev/flags/4x3/pt.svg'
+            }else if (this.elementOfMoviesSeries.original_language == 'ja') {
+                return 'https://flagicons.lipis.dev/flags/4x3/jp.svg'
             }else {
                 return ''
             }
@@ -52,16 +54,28 @@ export default {
         <img src="../assets/img/netflix-default.png" v-else :alt="elementOfMoviesSeries.title" class="border border-white h-100 w-100 object-fit-cover">
         <ol class="list-unstyled position-absolute top-0 start-0 h-100">
             <li class="text-white">
+                <p>
+                    TITOLO
+                </p>
                 {{ elementOfMoviesSeries.title ?? elementOfMoviesSeries.name }}
             </li>
             <li class="text-white">
+                <p>
+                    TITOLO ORIGINALE
+                </p>
                 {{ elementOfMoviesSeries.original_title ?? elementOfMoviesSeries.original_name }}
             </li>
             <li class="text-white">
+                <p>
+                    LINGUA
+                </p>
                 <img :src="flag" :alt="elementOfMoviesSeries.original_language.toUpperCase()" class="img-flag">
 
             </li>
             <li class="text-white">
+                <p>
+                    MEDIA VOTO DELL'UTENTE
+                </p>
                 {{ numberEntire(elementOfMoviesSeries.vote_average) }}
                 <i class="fa-star text-warning" :class="i <= numberEntire(elementOfMoviesSeries.vote_average) ? 'fa-solid' : 'fa-regular'"  v-for="i in 5" :key="i"></i>
             </li>
@@ -84,5 +98,14 @@ ol {
     background-color: rgba($color: #000000, $alpha: 0.8);
     padding: 20px;
     width: 100%;
+}
+p {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-style: italic;
+    color: brown;
+}
+li {
+    padding: 10px 0;
 }
 </style>
